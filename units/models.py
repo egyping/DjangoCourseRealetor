@@ -43,7 +43,7 @@ class Unit(models.Model):
     description = models.TextField(max_length=500, verbose_name='Unit Description')
     price = models.DecimalField(max_digits=10,decimal_places=2)
     num_bedrooms = models.IntegerField( verbose_name='Number of Bed rooms')
-    main_image = models.ImageField(upload_to='units_images/' , blank=True , null=True, verbose_name='Unit Main Image')
+    image = models.ImageField(upload_to='units_images/' , blank=True , null=True, verbose_name='Unit Main Image')
     created = models.DateTimeField(default=timezone.now)
     active = models.BooleanField(default=False)
     owner_email = models.EmailField(default='')

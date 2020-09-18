@@ -14,8 +14,9 @@ class ImagesAdmin(admin.ModelAdmin):
     list_display = ['image','title','image_thumbnail']
 
 
+@admin_thumbnails.thumbnail('image')
 class UnitAdmin(admin.ModelAdmin):
-    list_display = ['title', 'num_bedrooms', 'type','active', 'country','country', 'area']
+    list_display = ['title', 'num_bedrooms', 'type','active', 'country','country', 'area', 'image_thumbnail']
     list_filter = ['type']
     #readonly_fields = ('image_tag',)
     inlines = [UnitImageInline]
