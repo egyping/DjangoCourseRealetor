@@ -45,8 +45,8 @@ class Unit(models.Model):
     num_bedrooms = models.IntegerField( verbose_name='Number of Bed rooms')
     image = models.ImageField(upload_to='units_images/' , blank=True , null=True, verbose_name='Unit Main Image')
     created = models.DateTimeField(default=timezone.now)
-    active = models.BooleanField(default=False)
-    owner_email = models.EmailField(default='')
+    active = models.BooleanField(default=True)
+    owner_email = models.EmailField(default='fahdkuwait@gmail.com')
     type = models.CharField(choices=UNIT_TYPE , default='ROOM',max_length=20)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
@@ -60,7 +60,7 @@ class Unit(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('units:detail', kwargs={'slug': self.slug})
+        return reverse('units:unit_detail', kwargs={'slug': self.slug})
 
 
 class Images(models.Model):
