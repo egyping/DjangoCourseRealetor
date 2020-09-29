@@ -55,6 +55,10 @@ class Unit(models.Model):
     slug = models.SlugField(null=False, unique=True)
 
 
+    class Meta:
+        verbose_name = 'Unit'
+        verbose_name_plural = 'Units'
+        ordering = ('-active',)
 
     def __str__(self):
         return self.title
