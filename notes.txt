@@ -15,3 +15,12 @@ ORM initial
 
 ---------------------------------------------
 
+10_lecture
+
+class based view
+ListView
+DetailView
+
+mixins
+
+--------------------------------------------

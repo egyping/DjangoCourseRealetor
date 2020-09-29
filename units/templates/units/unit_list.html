@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AIRBNB Clone Fahd Mannaa</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <div class='row'>
+
+            <h1> <a href="{% url 'units:all_units_list' %}">Weclome To Our Blog </a> </h1>
+            <br>
+            <h2><a href="{% url 'units:new_unit' %}"> Add New Unit</a></h2>
+            <hr>
+            {% for object in object_list %}
+               <h3><a href="{{object.get_absolute_url}}">{{object}}</a> </h3>
+            {% endfor %}
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
