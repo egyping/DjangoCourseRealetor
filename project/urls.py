@@ -22,3 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('units', include('units.urls' , namespace='units'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+admin.site.site_header = 'AIRBNB Clone'
+admin.site.site_title = 'AIRBNB Clone'

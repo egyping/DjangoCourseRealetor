@@ -18,6 +18,7 @@ class ImagesAdmin(admin.ModelAdmin):
 class UnitAdmin(admin.ModelAdmin):
     list_display = ['title', 'num_bedrooms', 'type','active', 'country','country', 'area', 'image_thumbnail']
     list_filter = ['type']
+    search_fields = ['title', 'num_bedrooms', 'type']
     #readonly_fields = ('image_tag',)
     inlines = [UnitImageInline]
     prepopulated_fields = {'slug': ('title',)}

@@ -1,0 +1,17 @@
+11_lecture
+
+project.urls
+admin.site.site_header = 'Kids Shirts shop admin'
+admin.site.site_title = 'Kids Shirts shop admin'
+
+model.admin
+ModelAdmin >> list_display & list_filter & search_fields
+
+Model
+class meta
+get_absolute_url
+
+ORM initial 
+
+---------------------------------------------
+

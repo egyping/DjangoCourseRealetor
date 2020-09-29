@@ -20,7 +20,7 @@
             <h2><a href="{% url 'units:new_unit' %}"> Add New Unit</a></h2>
             <hr>
             {% for object in units %}
-               <h3><a href="{% url 'units:unit_detail' object.slug %}">{{object}}</a> </h3>
+               <h3><a href="{{object.get_absolute_url}}">{{object}}</a> </h3>
             {% endfor %}
         </div>
         
