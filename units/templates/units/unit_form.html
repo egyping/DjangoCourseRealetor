@@ -1,0 +1,11 @@
+
+<h1> <a href="{% url 'units:all_units_list' %}">Weclome AIRBNB </a> </h1>
+<h2>Add New Unit</h2>
+<hr>
+
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit"  value="new post">
+</form>
