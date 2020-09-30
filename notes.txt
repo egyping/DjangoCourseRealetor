@@ -24,3 +24,54 @@ DetailView
 mixins
 
 --------------------------------------------
+
+12_lecture
+
+user authentication 
+allauth > package cover all user authentication 
+Django default auth :-
+django.contrib.auth.urls
+startapp accounts 
+add it to settings
+from the doc get the django app url to the main url 
+this will explore the app urls 
+MOZILLA DOCUMENTATION
+you need to create html files for each url 
+create registeration folder 
+login.html 
+password_reset_email.html
+logged_out.html
+password_reset_form.html
+password_reset_done.html > copy from other
+password_reset_complete.html
+password_change_form.html > copy from other 
+at the settings add variable to send email
+EMAIL_BACKEND = ....etc.
+remove all blocks and extends 
+move the accounts app in installed apps to the top
+in order to avoid the admin default pages 
+signup and manage profile :-
+baseuser model: this will over write all django defaults 
+abstractbaseuser model: this replace only the user not groups and others 
+
+extend: the easiest way, this will link one-to-one between the django user default and your 
+new coded user model 
+accounts > model :-
+add the fields whatever you want extra to the defaults 
+add the default fields and link it one to one 
+from django.contrib.auth.models import User
+user = models.Foreignkey(User ....etc.)
+makemigrations migrate 
+register model in the admin 
+now you can create profile and link it to one of the default django user
+but we have to code, if we created in django admin it create new profile automatically 
+we have to use django signals post_save
+on new user creation send signal to create profile in accounts app 
+import post_save & receiver 
+
+
+-----------------------------------------
+13_lecture
+
+accounts.views:-
+signup - profile - profile edit 
