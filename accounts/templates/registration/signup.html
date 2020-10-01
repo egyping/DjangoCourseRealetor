@@ -1,0 +1,16 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h2> Signup Form</h2>
+
+
+<form method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <input name="" id="" class="btn btn-primary" type="submit" value="Signup">
+</form>
+
+
+{% endblock %}
