@@ -1,6 +1,6 @@
 import admin_thumbnails
 from django.contrib import admin
-from .models import Unit, Amenity, Country, City, Area, Images
+from .models import Unit, Amenity, Country, City, Area, Images, Comments
 
 
 @admin_thumbnails.thumbnail('image')
@@ -30,3 +30,4 @@ admin.site.register(Country)
 admin.site.register(City)
 admin.site.register(Area)
 admin.site.register(Images,ImagesAdmin)
+admin.site.register(Comments)

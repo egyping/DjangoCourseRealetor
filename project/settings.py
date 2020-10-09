@@ -136,4 +136,6 @@ LOGIN_REDIRECT_URL = '/accounts/profile'
 
 #AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 

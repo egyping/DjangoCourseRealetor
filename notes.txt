@@ -81,3 +81,10 @@ signup
 model comments - link comment to the post 
 
 in 13_lecture branch include 12 lecture "Review" and full 13
+
+
+adding comments to the units 
+create new comment model and link it to the unit
+---------------------------------------
+
+14_lecture
