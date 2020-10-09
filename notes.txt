@@ -75,3 +75,9 @@ import post_save & receiver
 
 accounts.views:-
 signup - profile - profile edit 
+to edit user you have to make one view to edit user form and user profile
+
+signup
+model comments - link comment to the post 
+
+in 13_lecture branch include 12 lecture "Review" and full 13
