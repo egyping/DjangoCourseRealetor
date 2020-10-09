@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Unit
+from .models import Unit, Comments
 from django.urls import reverse
-from .forms import UnitForm
+from .forms import UnitForm, CommentForm
 from django.views.generic import ListView, DetailView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -15,7 +15,20 @@ def all_units(request):
 def single_unit(request,slug):
     #logic
     single_unit = Unit.objects.get(slug=slug)
-    return render(request,'units/single_unit.html',{'unit':single_unit})
+    comments = Comments.objects.filter(unit=single_unit)
+
+    if request.method == 'POST':
+        commentform = CommentForm(request.POST)
+        if commentform.is_valid():
+            myform = commentform.save(commit=False)
+            myform.author = request.user
+            myform.post = single_unit
+            myform.save()
+    
+    else:
+        commentform = CommentForm()
+
+    return render(request,'units/single_unit.html',{'unit':single_unit,  'comments':comments, 'commentform':commentform })
 
 
 def new_unit(request):

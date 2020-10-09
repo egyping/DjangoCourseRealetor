@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 
 UNIT_TYPE = (
     ('CHALEH','CHALEH'),
@@ -74,3 +74,13 @@ class Images(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comments(models.Model):
+    author =  models.ForeignKey(User, related_name='comment_user', on_delete=models.CASCADE, null=True)
+    unit = models.ForeignKey(Unit , on_delete=models.CASCADE, null=True)
+    # post = models.ManyToManyField(Post)
+    text = models.TextField(max_length=200)
+
+
+    def __str__(self):
+        return str(self.unit)
